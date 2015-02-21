@@ -10,12 +10,16 @@
 #import "MotherViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController : MotherViewController{
+
+@interface ViewController : MotherViewController<UITableViewDelegate,UITableViewDataSource>
+{
 
     AppDelegate * app;
     NSManagedObjectContext * context;
-
 }
-    
+
+    @property(nonatomic) UITableView * maListe;
+    @property(nonatomic) NSArray * tableData;
+
 @end
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>91DD0D16-08E9-414D-9ECF-E56FA041297D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ProjetAnnuel</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F021AB4F6BBEF557377D9CE46A57391F4631EFFE</key>
+		<string>https://github.com/lmerabli/iphone_todo_list.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ProjetAnnuel.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F021AB4F6BBEF557377D9CE46A57391F4631EFFE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lmerabli/iphone_todo_list.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F021AB4F6BBEF557377D9CE46A57391F4631EFFE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F021AB4F6BBEF557377D9CE46A57391F4631EFFE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iphone_todo_list</string>
+		</dict>
+	</array>
+</dict>
+</plist>

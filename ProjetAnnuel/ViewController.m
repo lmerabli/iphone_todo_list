@@ -59,9 +59,86 @@
     
 }
 
+//retourne le comptenu table
+-(NSArray *)findListeProject
+{
+    
+    NSEntityDescription * query = [NSEntityDescription entityForName:@"Projets" inManagedObjectContext:context];
+    NSFetchRequest * request = [NSFetchRequest new];
+    [request setEntity:query];
+    
+    NSError * error;
+    NSArray * mesResultats = [context executeFetchRequest:request error:&error];
+    if(error){
+        NSLog(@"%@", error.description);
+    }
+    
+       return mesResultats;
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//fonction lié a la liste
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_tableData count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+     NSLog(@"je suis dans la fonction");
+    static NSString *cellid = @"uniqueIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    if(!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+    }
+    NSMutableDictionary *dict = [_tableData objectAtIndex:indexPath.row];
+  //  NSLog(@"fin tableau dict");
+    //NSLog(@"tableau dict %@", dict );
+    
+    //NSLog(@"tableau dict %@", [[dict objectForKey:@"data"] objectForKey:@"libelle_projet"]);
+    //cell.textLabel.text = [[dict objectForKey:@"data"] objectForKey:@"libelle_projet"];
+    cell.textLabel.text = [dict valueForKey:@"libelle_projet"];
+    //cell.textLabel.text = @"bob";
+    
+    
+  /*  cell.libelle_projet.text = [[_tableauxFruits objectAtIndex:indexPath.row]objectForKey:@"marque"];
+    cell.libelle_projet.text = self.dict[indexPath.row];
+        */
+    /*
+     
+     NSMutableDictionary *dict = [_tableauxFruits objectAtIndex:indexPath.row];
+     cell.nomFruitLabel.text = [[_tableauxFruits objectAtIndex:indexPath.row]objectForKey:@"marque"];
+     cell.poidsFruitLabel.text = [dict objectForKey:@"couleur"];
+     */
+    
+    
+    return cell;
+    
+}
+
+// NSInteger newID = 0;
+
+/*for (NSDictionary *dict in mesResultats) {
+ NSInteger ID = [[dict valueForKey:@"id_projet"] integerValue];
+ NSString  libelle = [[dict valueForKey:@"libelle_projet"] integerValue];
+ }*/
 
 
 
@@ -77,6 +154,19 @@
     
     
   //  [self afficheContenu:@"Projets"];
+    
+    //NSLog(@"new id -> %@",[self findListeProject]);
+    _tableData = [self findListeProject];
+    
+    
+    
+    
+    //liste projet
+    _maListe = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topView.frame), self.view.frame.size.width, self.view.frame.size.height-CGRectGetMaxY(self.topView.frame))];
+    _maListe.delegate = self;
+    _maListe.dataSource = self;
+    [_maListe setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:_maListe];
     
     
     
