@@ -14,9 +14,67 @@
 
 @implementation SecondViewController
 
+
+
+
+-(id)initWithDictionnaire: (NSMutableDictionary *) dict
+{
+    NSLog(@"initWithDictionnaire je passe" );
+    if(self=[super init])
+    {
+        
+        self.dictVoiture = dict;
+    }
+    
+    return self;
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"Viewdidappear");
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
+}
+
+-(void)loadView
+{
+    [super loadView];
+    NSLog(@"loadView");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"dictionnaire voiture %@", self.dictVoiture );
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    _marqueLabel = [[UILabel alloc] init];
+    _marqueLabel.frame = CGRectMake(50, 80, 250, 45);
+    _marqueLabel.backgroundColor = [UIColor redColor];
+    _marqueLabel.text = [self.dictVoiture valueForKey:@"libelle_projet"];
+    [self.view addSubview:_marqueLabel];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()
 
@@ -109,36 +110,38 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
     }
     NSMutableDictionary *dict = [_tableData objectAtIndex:indexPath.row];
-  //  NSLog(@"fin tableau dict");
-    //NSLog(@"tableau dict %@", dict );
-    
-    //NSLog(@"tableau dict %@", [[dict objectForKey:@"data"] objectForKey:@"libelle_projet"]);
-    //cell.textLabel.text = [[dict objectForKey:@"data"] objectForKey:@"libelle_projet"];
+  
     cell.textLabel.text = [dict valueForKey:@"libelle_projet"];
-    //cell.textLabel.text = @"bob";
-    
-    
-  /*  cell.libelle_projet.text = [[_tableauxFruits objectAtIndex:indexPath.row]objectForKey:@"marque"];
-    cell.libelle_projet.text = self.dict[indexPath.row];
-        */
-    /*
-     
-     NSMutableDictionary *dict = [_tableauxFruits objectAtIndex:indexPath.row];
-     cell.nomFruitLabel.text = [[_tableauxFruits objectAtIndex:indexPath.row]objectForKey:@"marque"];
-     cell.poidsFruitLabel.text = [dict objectForKey:@"couleur"];
-     */
-    
-    
+
     return cell;
     
 }
 
-// NSInteger newID = 0;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"fonction 3 void");
+    NSMutableDictionary * dict = [_tableData objectAtIndex:indexPath.row];
+    
+    SecondViewController * vc = [[SecondViewController alloc] initWithDictionnaire:dict];
+    vc.dictVoiture= dict;
+    //[self presentViewController:vc animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
-/*for (NSDictionary *dict in mesResultats) {
- NSInteger ID = [[dict valueForKey:@"id_projet"] integerValue];
- NSString  libelle = [[dict valueForKey:@"libelle_projet"] integerValue];
- }*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

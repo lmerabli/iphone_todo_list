@@ -10,4 +10,13 @@
 
 @interface SecondViewController : MotherViewController
 
+
+@property(nonatomic)UILabel *marqueLabel;
+@property(nonatomic) UIImageView *imgv;
+@property(nonatomic) NSMutableDictionary *dictVoiture;
+
+
+-(id)initWithDictionnaire: (NSMutableDictionary *) dict;
+
+
 @end

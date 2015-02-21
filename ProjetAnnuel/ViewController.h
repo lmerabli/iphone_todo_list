@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MotherViewController.h"
 #import "AppDelegate.h"
+//#import "SecondViewController.h"
 
 
-@interface ViewController : MotherViewController<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController : MotherViewController<UITableViewDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+
 {
 
     AppDelegate * app;
@@ -20,6 +22,9 @@
 
     @property(nonatomic) UITableView * maListe;
     @property(nonatomic) NSArray * tableData;
+  //  @property(nonatomic,retain) NSMutableArray *mesDonnees;
+
+
 
 @end
 
