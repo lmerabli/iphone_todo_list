@@ -50,7 +50,7 @@
 
 
 
--(NSString *)addTextField{
+-(UILabel *)addTextField{
     // This allocates a label
     UILabel *prefixLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     //This sets the label text
@@ -128,9 +128,17 @@
     _marqueLabel.text = [self.dictVoiture valueForKey:@"libelle_projet"];
     [self.view addSubview:_marqueLabel];
     
-        NSString *input = [self addTextField];
+        UILabel *input = [self addTextField];
     // Adds the textField to the view.
+    // input.frame = CGRectMake(50, 100, 280, 30);
     [self.view addSubview:input];
+    
+    
+    UILabel *input2 = [self addTextField ];
+    // Adds the textField to the view.
+    input2.frame = CGRectMake(50, 100, 280, 30);
+    input2.numberOfLines =0;
+    [self.view addSubview:input2];
     
     // sets the delegate to the current class
     //textField.delegate = self;
