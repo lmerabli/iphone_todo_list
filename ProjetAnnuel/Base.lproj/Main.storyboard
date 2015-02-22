@@ -17,12 +17,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irl-n9-U2W">
-                                <rect key="frame" x="109" y="107" width="382" height="44"/>
+                                <rect key="frame" x="109" y="117" width="382" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="aYz-SN-VBQ"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkn-yx-0yL">
+                                <rect key="frame" x="483" y="66" width="36" height="30"/>
+                                <state key="normal" title="Ajout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ADu-UV-LIU" kind="push" id="mJh-YC-n1E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -44,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1298" y="216"/>
         </scene>
-        <!--View Controller-->
+        <!--Fourth View Controller-->
         <scene sceneID="BEv-eX-y07">
             <objects>
-                <viewController id="ADu-UV-LIU" sceneMemberID="viewController">
+                <viewController id="ADu-UV-LIU" customClass="FourthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SIn-0E-QP3"/>
                         <viewControllerLayoutGuide type="bottom" id="mkw-LE-pqj"/>
@@ -84,10 +93,14 @@
                                 <state key="normal" title="Valide">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="Hfc-Xn-ZuZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5Nd-tl-IIl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80Y-vg-YaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,6 +182,9 @@
                                 <state key="normal" title="Valide">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="skt-pz-bAn" kind="push" id="ZwO-u6-YXh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K58-MS-Y8s">
                                 <rect key="frame" x="104" y="303" width="97" height="21"/>
@@ -247,12 +263,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpH-cI-BbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2982" y="627"/>
+            <point key="canvasLocation" x="2875" y="571"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="P1i-Iy-1pF">
             <objects>
-                <viewController id="skt-pz-bAn" sceneMemberID="viewController">
+                <viewController id="skt-pz-bAn" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lFX-pb-rSx"/>
                         <viewControllerLayoutGuide type="bottom" id="TmF-EH-3cy"/>
@@ -268,9 +284,19 @@
                                     <outlet property="delegate" destination="skt-pz-bAn" id="R5e-hK-CiO"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-Pi-m0e">
+                                <rect key="frame" x="454" y="81" width="36" height="30"/>
+                                <state key="normal" title="Ajout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TR9-Gb-3CV" kind="modal" id="08W-bN-PMx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="j6O-j4-d2g"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Dru-wS-x21" id="fcq-F2-xMK"/>
                     </connections>
@@ -307,4 +333,7 @@
             <point key="canvasLocation" x="517" y="216"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Hfc-Xn-ZuZ"/>
+    </inferredMetricsTieBreakers>
 </document>
