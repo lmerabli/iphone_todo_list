@@ -23,7 +23,7 @@
     @property(nonatomic) UITableView * maListe;
     @property(nonatomic) NSArray * tableData;
   //  @property(nonatomic,retain) NSMutableArray *mesDonnees;
-
+    @property(nonatomic) UIButton * goTo2Btn;
 
 
 @end
