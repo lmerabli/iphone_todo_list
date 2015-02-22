@@ -130,6 +130,11 @@
     
 }
 
+-(void)vcAddProjet{
+    NSLog(@"Button 2 pressed");
+    SecondViewController * vc = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 
@@ -161,6 +166,14 @@
     //NSLog(@"new id -> %@",[self findListeProject]);
     _tableData = [self findListeProject];
     
+    
+    //button 2
+    self.goTo2Btn = [[UIButton alloc] init];
+    _goTo2Btn.frame = CGRectMake((self.view.frame.size.width-100)/2,(self.view.frame.size.height-100)/2,100,35);
+    _goTo2Btn.backgroundColor = [UIColor greenColor];
+    [_goTo2Btn addTarget:self action:@selector(vcAddProjet) forControlEvents:UIControlEventTouchDown];
+    [_goTo2Btn setTitle:@"Add Projet" forState:UIControlStateNormal];
+    [self.view addSubview:_goTo2Btn];
     
     
     
