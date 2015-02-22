@@ -50,6 +50,62 @@
 
 
 
+-(NSString *)addTextField{
+    // This allocates a label
+    UILabel *prefixLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+    //This sets the label text
+    prefixLabel.text =@"## ";
+    // This sets the font for the label
+    [prefixLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    // This fits the frame to size of the text
+    [prefixLabel sizeToFit];
+    
+    // This allocates the textfield and sets its frame
+    UITextField *textField = [[UITextField  alloc] initWithFrame:
+                              CGRectMake(20, 50, 280, 30)];
+    
+    // This sets the border style of the text field
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.contentVerticalAlignment =
+    UIControlContentVerticalAlignmentCenter;
+    [textField setFont:[UIFont boldSystemFontOfSize:12]];
+    
+    //Placeholder text is displayed when no text is typed
+    textField.placeholder = @"Simple Text field";
+    
+    //Prefix label is set as left view and the text starts after that
+    textField.leftView = prefixLabel;
+    
+    //It set when the left prefixLabel to be displayed
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    return textField;
+    
+    // Adds the textField to the view.
+    //[self.view addSubview:textField];
+    
+    // sets the delegate to the current class
+    //textField.delegate = self;
+}
+
+// pragma mark is used for easy access of code in Xcode
+#pragma mark - TextField Delegates
+
+// This method is called once we click inside the textField
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"Text field did begin editing");
+}
+
+// This method is called once we complete editing
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"Text field ended editing");
+}
+
+// This method enables or disables the processing of return key
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 
@@ -72,8 +128,12 @@
     _marqueLabel.text = [self.dictVoiture valueForKey:@"libelle_projet"];
     [self.view addSubview:_marqueLabel];
     
+        NSString *input = [self addTextField];
+    // Adds the textField to the view.
+    [self.view addSubview:input];
     
-    
+    // sets the delegate to the current class
+    //textField.delegate = self;
     
 }
 
